@@ -18,7 +18,7 @@ composer install
 
 #### Упрощенный запрос
 
-```javascript
+```
 [GET] HOST/api/simple/{locale}/{count}?{params}
 ```
 
@@ -30,13 +30,13 @@ params - список полей и типов значений для запо�
 
 Запрос
 
-```javascript
+```
 [GET] HOST/api/simple/ru_RU/5?uuid=uuid&email=email
 ```
 
 Результат
 
-```javascript
+```
 [
   {
     uuid: "6faccc41-b99f-3b16-b42d-8579510a3518",
