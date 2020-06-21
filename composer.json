@@ -1,0 +1,22 @@
+{
+    "name": "likelife/data4test",
+    "type": "project",
+    "description": "server with fake data",
+    "license": "MIT",
+    "require": {
+        "ext-json": "*",
+        "php": "^7.1",
+        "slim/slim": "^4.1",
+        "nyholm/psr7": "^1.1",
+        "nyholm/psr7-server": "^0.3",
+        "php-di/php-di": "^6",
+        "monolog/monolog": "^1.24",
+        "dflydev/fig-cookies": "^2.0",
+        "fzaninotto/faker": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
