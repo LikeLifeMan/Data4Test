@@ -149,7 +149,7 @@
         "key": "data",
         "val": [
           { "key": "name", "val": "name" },
-          { "key": "jobTitle", "val": "jobTitle" }
+          { "key": "city", "val": "city" }
         ],
         "count": 3
       }
