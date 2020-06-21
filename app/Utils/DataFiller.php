@@ -7,7 +7,6 @@ use Faker;
 class DataFiller
 {
     public static $fieldTypes = [
-
         // Base
         'randomDigit', 'randomDigitNotNull', 'randomLetter',
         // Lorem
@@ -52,8 +51,6 @@ class DataFiller
         'languageCode', 'currencyCode', 'emoji',
         // HtmlLorem
         'randomHtml',
-
-
     ];
 
     public static function make($locale, int $count, array $params): array
