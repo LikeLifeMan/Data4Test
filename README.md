@@ -89,7 +89,10 @@ count - счетчик для генерации результата (подд�
   { "key": "company", "val": "company" },
   {
     "key": "data",
-    "val": [{ "key": "name", "val": "name" }, { "key": "jobTitle", "val": "jobTitle" }],
+    "val": [
+      { "key": "name", "val": "name" },
+      { "key": "city", "val": "city" }
+    ],
     "count": 3
   }
 ]

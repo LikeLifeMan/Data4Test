@@ -81,7 +81,7 @@
                   &nbsp;&nbsp;&nbsp;&nbsp;"key": "data",<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;"val": [<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "key": "name", "val": "name" },<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "key": "jobTitle", "val": "jobTitle" }<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "key": "city", "val": "city" }<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;],<br>
                   &nbsp;&nbsp;&nbsp;&nbsp;"count": 3<br>
                   &nbsp;&nbsp;}<br>
