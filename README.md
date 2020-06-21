@@ -63,7 +63,7 @@ params - список полей и типов значений для запо�
 
 #### Запрос с шаблоном
 
-```javascript
+```
 [POST] HOST/api/template/{locale}
 ```
 
@@ -71,7 +71,7 @@ locale - локаль (ru_RU, en_US и т.д.)
 
 Структура шаблона
 
-```javascript
+```
 [
   { "key":keyName,"val": value, "count": count },
   ...
@@ -84,20 +84,20 @@ count - счетчик для генерации результата (подд�
 
 Шаблон поддерживает вложенность
 
-```javascript
+```
 [
-  { key: "company", val: "company" },
+  { "key": "company", "val": "company" },
   {
-    key: "data",
-    val: [{ key: "name", val: "name" }, { key: "jobTitle", val: "jobTitle" }],
-    count: 3
+    "key": "data",
+    "val": [{ "key": "name", "val": "name" }, { "key": "jobTitle", "val": "jobTitle" }],
+    "count": 3
   }
-];
+]
 ```
 
 Результат
 
-```javascript
+```
 {
   "company": "Gutmann-Mosciski",
   "data": [
