@@ -7,9 +7,29 @@ use Faker;
 class DataFiller
 {
     public static $fieldTypes = [
-      'name',
-        'randomDigit', 'randomDigitNotNull',
-        'randomLetter', 'word',
+
+        // Base
+        'randomDigit', 'randomDigitNotNull', 'randomLetter',
+        // Lorem
+        'word',
+        // Person
+        'name', 'firstName', 'firstNameMale', 'firstNameFemale', 'lastName',
+        // Address
+        'city', 'streetName', 'streetAddress', 'postcode', 'address',
+        'country', 'latitude', 'longitude',
+        // Company
+        'company', 'jobTitle',
+        // Text
+        'realText',
+        // DateTime
+        'unixTime', 'dateTime', 'dateTimeAD', 'iso8601', 'date', 'time',
+        'dateTimeBetween', 'dateTimeInInterval', 'dateTimeThisCentury',
+        'dateTimeThisDecade', 'dateTimeThisYear', 'dateTimeThisMonth',
+        'amPm', 'dayOfMonth', 'dayOfWeek', 'month', 'monthName',
+        'year', 'century', 'timezone',
+        // Color
+        'hexcolor', 'rgbcolor', 'rgbColorAsArray', 'rgbCssColor',
+        'safeColorName', 'colorName', 'hslColor', 'hslColorAsArray',
         // PhoneNumber
         'phoneNumber',
         // Internet
@@ -21,18 +41,17 @@ class DataFiller
         // Payment
         'creditCardType', 'creditCardNumber', 'creditCardExpirationDate',
         'creditCardExpirationDateString', 'creditCardDetails',
-        // Color
-        'hexcolor', 'rgbcolor', 'rgbColorAsArray', 'rgbCssColor', 'safeColorName',
-        'colorName', 'hslColor', 'hslColorAsArray',
         // File
         'fileExtension', 'mimeType',
         // uuid
         'uuid',
         // Barcode
-        'boolean',
-        //'boolean($chanceOfGettingTrue = 50) // true
-        'md5', 'sha1', 'sha256', 'locale', 'countryCode', 'languageCode', 'currencyCode',
-        'emoji',
+        'ean13', 'ean8', 'isbn13', 'isbn10',
+        // Miscellaneous
+        'boolean', 'md5', 'sha1', 'sha256', 'locale', 'countryCode',
+        'languageCode', 'currencyCode', 'emoji',
+        // HtmlLorem
+        'randomHtml',
 
 
     ];
@@ -93,7 +112,7 @@ class DataFiller
                 $out[$keyName] = $items;
             } else {
                 // simple value (need ignore count field)
-                
+
                 $out[$keyName] = in_array($valValue, self::$fieldTypes) ? $faker->{$valValue} : $valValue;
             }
         }
