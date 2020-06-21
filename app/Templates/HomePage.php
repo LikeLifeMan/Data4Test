@@ -66,10 +66,27 @@
                 ]
               </code>
               <p>
-                keyName - наименование значения<br>
-                value - значение либо шаблон (поддерживается вложенность - value может являться массивом с шаблоном)<br>
-                count - количество добавляемых записей (только если value является вложенным шаблоном)
+                key - наименование поля результата
+                val - наименование форматтера (если поддерживается) или вложенный шаблон
+                count - счетчик для генерации результата (поддерживается только для объектов, где val является вложенным шаблоном)
               </p>
+
+              <p>
+                Шаблон поддерживает вложенность
+              </p>
+              <code>
+                [<br>
+                  &nbsp;&nbsp;{ "key": "company", "val": "company" },<br>
+                  &nbsp;&nbsp;{<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"key": "data",<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"val": [<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "key": "name", "val": "name" },<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "key": "jobTitle", "val": "jobTitle" }<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;"count": 3<br>
+                  &nbsp;&nbsp;}<br>
+                ]
+              </code>
             </p>
           </p>
         </div>
@@ -101,10 +118,18 @@
             }
           ?>
         </select>
+        <div class="btn btn-sm btn-primary" onClick="getData()">Получить данные</div>
       </div>
-      <div id="editor" class="my-3 shadow" style="min-height:180px"></div>
-      <div class="btn btn-primary" onClick="getData()">Получить данные</div>
-      <div id="editor-res" class="my-3 shadow" style="min-height:180px"></div>
+      <div class="row" style="height: 70vh!important;">
+        <div class="col-md-6 p-1">
+          <div>Шаблон</div>
+          <div id="editor" class="my-3 shadow h-100"></div>
+        </div>
+        <div class="col-md-6 p-1">
+          <div>Ответ</div>
+          <div id="editor-res" class="my-3 shadow h-100"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -119,11 +144,15 @@
     $('.host').html(window.location.origin);
 
     var jsonData = [
-      {"key": "total", "val": "3"},
-      {"key": "data", "val": [
-        {"key": "name", "val": "name"},
-        {"key": "phone", "val": "phoneNumber"}
-      ], "count": 3}
+      { "key": "company", "val": "company" },
+      {
+        "key": "data",
+        "val": [
+          { "key": "name", "val": "name" },
+          { "key": "jobTitle", "val": "jobTitle" }
+        ],
+        "count": 3
+      }
     ];
 
     ace.config.set("basePath", "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/");
