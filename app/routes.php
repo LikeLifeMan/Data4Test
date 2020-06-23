@@ -5,7 +5,6 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
-
 return function (App $app) {
     $app->get('/', \App\Actions\HomeAction::class);
 
@@ -14,8 +13,6 @@ return function (App $app) {
         $group->post('/template/{locale}', \App\Actions\TemplateDataAction::class);
     });
 
-
     // system routes
     $app->options('/api/{routes:.+}', \App\Actions\System\CORSPreFlightOptions::class);
-    //$app->get('[{routes:.+}]', \App\Actions\System\FrontController::class);
 };

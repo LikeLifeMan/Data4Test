@@ -8,28 +8,10 @@ use App\ResponseEmitter\ResponseEmitter;
 
 class ShutdownHandler
 {
-    /**
-     * @var Request
-     */
     private $request;
-
-    /**
-     * @var HttpErrorHandler
-     */
     private $errorHandler;
-
-    /**
-     * @var bool
-     */
     private $displayErrorDetails;
 
-    /**
-     * ShutdownHandler constructor.
-     *
-     * @param Request       $request
-     * @param $errorHandler $errorHandler
-     * @param bool          $displayErrorDetails
-     */
     public function __construct(
         Request $request,
         HttpErrorHandler $errorHandler,

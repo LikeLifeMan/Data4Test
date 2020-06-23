@@ -8,9 +8,6 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
 
 class ResponseEmitter extends SlimResponseEmitter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function emit(ResponseInterface $response): void
     {
         $contentType = $response->getHeader('Content-Type');
@@ -34,7 +31,7 @@ class ResponseEmitter extends SlimResponseEmitter
         if (ob_get_contents()) {
             ob_clean();
         }
-        
+
         parent::emit($response);
     }
 }
